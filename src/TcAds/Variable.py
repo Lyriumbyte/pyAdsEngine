@@ -1,5 +1,9 @@
 class Variable:
 
+
+############
+# Vars
+############
     name = str()
     indexGroup = int()
     indexOffset = int()
