@@ -1,5 +1,7 @@
-class Variable:
+class Variable():
 
+    def __init__(self):
+        pass
 
 ############
 # Vars
@@ -16,4 +18,8 @@ class Variable:
         if self.objValue != None:
             self.previousValue = self.objValue
         self.objValue = newObjValue
-    
+
+    def toString(self):
+        str(self.name+","+str(self.objValue))
+   
+
