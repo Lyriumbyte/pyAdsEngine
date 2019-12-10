@@ -1,7 +1,7 @@
-class Variable():
+class Variable:
 
-    def __init__(self):
-        pass
+    def __init__(self, name):
+        self.name = name
 
 ############
 # Vars
@@ -19,7 +19,6 @@ class Variable():
             self.previousValue = self.objValue
         self.objValue = newObjValue
 
-    def toString(self):
-        str(self.name+","+str(self.objValue))
+    
    
 
