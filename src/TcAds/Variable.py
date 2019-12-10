@@ -25,6 +25,9 @@ class Variable:
             self.__previousValue = self.__objValue
         self.__objValue = newObjValue
     
+
+
+
     '''
     Getter/Setter + Properties
     '''
