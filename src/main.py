@@ -1,6 +1,6 @@
-from TcAds.Variable import Variable
+from TcAds import Variable  as Engine
 
-var1 = Variable("Test")
+var1 = Engine.Variable("Test")
 
 
 
