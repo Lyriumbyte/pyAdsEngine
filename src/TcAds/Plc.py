@@ -1,3 +1,10 @@
 import pyads
 
-plc = pyads.Connection('127.0.0.1.1.1', 851) #local connection
+class plc():
+    plc = pyads.Connection('127.0.0.1.1.1', 851) #local connection
+
+    def __init__(self):
+        pass
+
+    def test(self,name,value):
+        self.plc.write_by_name(str(name),value,pyads.PLCTYPE_INT)

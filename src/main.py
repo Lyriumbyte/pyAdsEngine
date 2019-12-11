@@ -1,10 +1,12 @@
 from TcAds.Variable import Variable as Variable
 from TcAds.Engine import Engine as Engine
 from TcAds.Plc import plc as plc
+plc = plc()
 
-plc.open
+plc.plc.open()
+plc.test('MAIN.intArray001',12)
+plc.plc.close()
 
-plc.close
 engine = Engine()
 
 var1 = Variable("Test1")
@@ -21,4 +23,4 @@ engine.addVariable(var3)
 
 
 print(var1)
-print(engine.valueDict[var1])
+#print(engine.valueDict[var1])
