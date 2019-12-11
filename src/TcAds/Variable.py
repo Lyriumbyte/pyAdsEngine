@@ -25,6 +25,10 @@ class Variable:
             self.__previousValue = self.__objValue
         self.__objValue = newObjValue
 
+
+    def __str__(self):
+        return(str(self.name)+", "+str(self.indexGroup)+", "+str(self.indexOffset)+", "+str(self.objValue)+", "+str(self.previousValue)+", "+str(self.writeValue))
+
     '''
     Getter/Setter + Properties
     '''
