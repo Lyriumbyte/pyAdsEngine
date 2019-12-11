@@ -1,12 +1,15 @@
-from TcAds import Variable  as Engine
-from TcAds import Engine  as TcAds
+from TcAds.Variable import Variable as Variable
+from TcAds.Engine import Engine as Engine
 
-TcAds.Variable = Engine.Variable
+engine = Engine()
 
-var1 = TcAds.Variable("Test")
+var1 = Variable("Test1")
+var2 = Variable("Test2")
+var3 = Variable("Test3")
 
-TcAds.Engine.valueDict [var1.name] = [var1.indexOffset, var1.indexGroup]
-
+engine.addVariable(var1)
+engine.addVariable(var2)
+engine.addVariable(var3)
 
 '''
 var1.name = "Hans"
@@ -15,6 +18,6 @@ print(var1.name)
 var1.writeValue = 5
 '''
 
-print(TcAds.Engine.valueDict)
-
 print(var1)
+print(engine.valueDict)
+
