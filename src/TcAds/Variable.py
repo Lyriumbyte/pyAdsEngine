@@ -1,8 +1,9 @@
 class Variable:
 
     # constructor
-    def __init__(self, name):
+    def __init__(self, name, datatype):
         self.__name = name
+        self.__datatype = datatype
     '''
     Vars
     '''
@@ -18,6 +19,7 @@ class Variable:
     __writeValue = object()
 
     isDirty = bool()
+    __datatype = None
 
 # Updates Value if a value is allready there
     def updateValue(self, newObjValue):
@@ -27,7 +29,7 @@ class Variable:
 
 
     def __str__(self):
-        return(str(self.name)+", "+str(self.indexGroup)+", "+str(self.indexOffset)+", "+str(self.objValue)+", "+str(self.previousValue)+", "+str(self.writeValue))
+        return(str(self.name)+", "+str(self.indexGroup)+", "+str(self.indexOffset)+", "+str(self.objValue)+", "+str(self.previousValue)+", "+str(self.writeValue)+", "+str(self.datatype))
 
     '''
     Getter/Setter + Properties
@@ -86,3 +88,12 @@ class Variable:
         self.__writeValue = writeValue
 
     writeValue = property(__getWriteValue, __setWriteValue)
+
+    #Getter, Setter Property for datatype
+    def __getDatatype(self):
+        return type(self.__datatype)
+
+    def __setDatatype(self,setType):
+        self.__datatype = setType
+
+    datatype = property(__getDatatype, __setDatatype)

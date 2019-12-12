@@ -6,5 +6,5 @@ class plc():
     def __init__(self):
         pass
 
-    def test(self,name,value):
+    def writeIntByName(self,name,value):
         self.plc.write_by_name(str(name),value,pyads.PLCTYPE_INT)
