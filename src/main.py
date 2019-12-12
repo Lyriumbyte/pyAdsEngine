@@ -1,6 +1,45 @@
 from TcAds.Variable import Variable as Variable
 from TcAds.Engine import Engine as Engine
 from TcAds.Plc import plc as plc
+
+import device1 as Device1
+import device2 as Device2
+
+engine = Engine()
+
+d1 = Device1.Device1()
+d2 = Device2.Device2()
+
+engine.addVariables(d1.getVariables()) #todo addVariables (plural, Liste, Array)
+engine.addVariables(d2.getVariables())
+
+#engine.updateHandle() #todo updateHandles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 plc = plc()
 
 
@@ -9,7 +48,7 @@ plc.plc.open()
 plc.writeIntByName('MAIN.intWert001',12)
 plc.plc.close()
 
-engine = Engine()
+
 
 var1 = Variable("Test1",int())
 var2 = Variable("Test2",str())
@@ -21,9 +60,9 @@ var1.datatype = str()
 
 
 
-engine.addVariable(var1)
-engine.addVariable(var2)
-engine.addVariable(var3)
+engine.addVariables(var1)
+engine.addVariables(var2)
+engine.addVariables(var3)
 
 
 

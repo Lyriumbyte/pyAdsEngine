@@ -7,7 +7,7 @@ class Engine:
 
     
 
-    def addVariable(self, variable):
+    def addVariables(self, variable):
         """Adds variable """
         self.valueDict[variable.name] = variable
     
