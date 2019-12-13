@@ -9,11 +9,7 @@ class Plc():
     def __init__(self):
         pass
 
-    '''def writeIntByName(self,name,value):
-        self.__plc.open()
-        self.__plc.write_by_name(str(name),value,pyads.PLCTYPE_INT)
-        self.__plc.close()'''
-
+    
     def writeValue(self,variable):
         # opens connection
         self.__plc.open()
@@ -64,6 +60,22 @@ class Plc():
         newValue = self.__readValue(variable)
         variable.updateValue(newValue)
         engine.addVariables(variable)
+
+
+        #closes connection
+        self.__plc.close()
+
+    def blockWriteValues(self):
+
+        #opens connection
+        self.__plc.open()
+
+        #for loop through dictionary with variable entries
+        for x in engine.valueDict:
+
+            #checks if there are unsaved changes
+            if engine.valueDict[x].isDirty:
+                self.writeValue(engine.valueDict[x])
 
 
         #closes connection

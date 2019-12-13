@@ -8,14 +8,21 @@ engine = Engine()
 #TwinCAT_Projekt1.Untitled1.MAIN.intWert000
 
 var1 = Variable('MAIN.intWert000')
-var1.writeValue = 161
+var1.writeValue = 13
 plc = Plc()
-plc.writeValue(var1)
-plc.updateValues(var1)
-
-var2 = Variable('MAIN.intWert008')
-plc.updateValues(var2)
 
 
-print(engine.valueDict[var1.name])
-print(engine.valueDict[var2.name])
+var2 = Variable('MAIN.intWert006')
+var2.writeValue = 99
+
+
+var3 = Variable('MAIN.intWert018')
+var3.writeValue = 978
+
+
+engine.addVariables(var1)
+engine.addVariables(var2)
+engine.addVariables(var3)
+
+
+plc.blockWriteValues()
