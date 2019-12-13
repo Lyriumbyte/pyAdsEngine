@@ -80,3 +80,17 @@ class Plc():
 
         #closes connection
         self.__plc.close()
+
+    def blockUpdateValues(self):
+
+        #opens connection
+        self.__plc.open()
+
+        #for loop through dictionary with variable entries
+        for x in engine.valueDict:
+
+            self.updateValues(engine.valueDict[x])
+
+
+        #closes connection
+        self.__plc.close()

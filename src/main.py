@@ -19,10 +19,17 @@ var2.writeValue = 99
 var3 = Variable('MAIN.intWert018')
 var3.writeValue = 978
 
-
 engine.addVariables(var1)
 engine.addVariables(var2)
 engine.addVariables(var3)
 
 
+plc.blockUpdateValues()
+
+
 plc.blockWriteValues()
+
+
+
+
+
