@@ -1,9 +1,9 @@
 class Variable:
 
     # constructor
-    def __init__(self, name, datatype):
+    def __init__(self, name):
         self.__name = name
-        self.__datatype = datatype
+        self.__datatype = type(self.__objValue)
     '''
     Vars
     '''
@@ -14,9 +14,9 @@ class Variable:
     __indexOffset = int()
 
     # Values
-    __objValue = object()
-    __previousValue = object()
-    __writeValue = object()
+    __objValue = 0
+    __previousValue = 0
+    __writeValue = 0
 
     isDirty = bool()
     __datatype = None
@@ -68,6 +68,7 @@ class Variable:
 
     def __setObjValue(self, objValue):
         self.__objValue = objValue
+        self.__setDatatype()
 
     objValue = property(__getObjValue, __setObjValue)
 
@@ -93,7 +94,8 @@ class Variable:
     def __getDatatype(self):
         return type(self.__datatype)
 
-    def __setDatatype(self,setType):
-        self.__datatype = setType
+    def __setDatatype(self):
+        #self.__datatype = isinstance(self.__objValue)
+        print(str(self.__datatype))
 
     datatype = property(__getDatatype, __setDatatype)
