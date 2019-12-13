@@ -11,3 +11,6 @@ class Engine:
         """Adds variable """
         self.valueDict[variable.name] = variable
     
+
+    def __str__(self):
+        return self.valueDict

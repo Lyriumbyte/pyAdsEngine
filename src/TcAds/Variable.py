@@ -19,7 +19,7 @@ class Variable:
     __writeValue = 0
 
     isDirty = bool()
-    __datatype = None
+
 
 # Updates Value if a value is allready there
     def updateValue(self, newObjValue):
@@ -29,7 +29,7 @@ class Variable:
 
 
     def __str__(self):
-        return(str(self.name)+", "+str(self.indexGroup)+", "+str(self.indexOffset)+", "+str(self.objValue)+", "+str(self.previousValue)+", "+str(self.writeValue)+", "+str(self.datatype))
+        return(str(self.name)+", "+str(self.indexGroup)+", "+str(self.indexOffset)+", "+str(self.objValue)+", "+str(self.previousValue)+", "+str(self.writeValue))
 
     '''
     Getter/Setter + Properties
@@ -68,8 +68,7 @@ class Variable:
 
     def __setObjValue(self, objValue):
         self.__objValue = objValue
-        self.__setDatatype()
-
+       
     objValue = property(__getObjValue, __setObjValue)
 
     # Getter, Setter Property for prevValue
@@ -87,15 +86,6 @@ class Variable:
 
     def __setWriteValue(self, writeValue):
         self.__writeValue = writeValue
+        self.isDirty = True
 
     writeValue = property(__getWriteValue, __setWriteValue)
-
-    #Getter, Setter Property for datatype
-    def __getDatatype(self):
-        return type(self.__datatype)
-
-    def __setDatatype(self):
-        #self.__datatype = isinstance(self.__objValue)
-        print(str(self.__datatype))
-
-    datatype = property(__getDatatype, __setDatatype)
