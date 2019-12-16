@@ -22,8 +22,10 @@ class Engine:
     def run(self, logic_func, sleepDuration, varList):
         """runs function given as postional argument and blockWrite and blockRead with given list"""
         while 1:
+            self.plc.prepare()
             self.plc.blockWriteValues(varList)
             self.plc.blockUpdateValues(varList)
             logic_func()
             self.time.sleep(sleepDuration)
+            self.plc.close()
             
