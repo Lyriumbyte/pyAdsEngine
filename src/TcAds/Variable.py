@@ -29,7 +29,7 @@ class Variable:
 
 
     def __str__(self):
-        return(str(self.name)+", "+str(self.indexGroup)+", "+str(self.indexOffset)+", "+str(self.objValue)+", "+str(self.previousValue)+", "+str(self.writeValue))
+        return(str(self.name)+", "+str(self.indexGroup)+", "+str(self.indexOffset)+", "+str(self.Value)+", "+str(self.previousValue))
 
     '''
     Getter/Setter + Properties
@@ -69,7 +69,6 @@ class Variable:
     def __setObjValue(self, objValue):
         self.__objValue = objValue
        
-    objValue = property(__getObjValue, __setObjValue)
 
     # Getter, Setter Property for prevValue
     def __getPrevValue(self):
@@ -88,4 +87,5 @@ class Variable:
         self.__writeValue = writeValue
         self.isDirty = True
 
-    writeValue = property(__getWriteValue, __setWriteValue)
+    Value = property(__getObjValue, __setWriteValue)
+    writeValue = property(__getWriteValue)
