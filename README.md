@@ -35,7 +35,7 @@ write a single value (bool, int and string)
 reads a single value   
 writes all values   
 reads all values
-## Example
+## All other Files need to be under src because they import from TcAds
 ### Machine
 do: where you can declare which device code you want to run   
 addVariables: where you can add your variables to the dictionary   
