@@ -1,12 +1,11 @@
 class Variable:
 
     # constructor
-    def __init__(self, name):
+    def __init__(self, name,datatype):
+        '''pyads datatype i.e.:pyads.PLCTYPE_INT'''
         self.__name = name
-        self.__datatype = type(self.__objValue)
-    '''
-    Vars
-    '''
+        self.__datatype = datatype
+    
     __name = str()
 
     # Handle
@@ -89,3 +88,8 @@ class Variable:
 
     Value = property(__getObjValue, __setWriteValue)
     writeValue = property(__getWriteValue)
+
+    #Get Datatype and Property
+    def __getDatatype(self):
+        return self.__datatype
+    datatype = property(__getDatatype)

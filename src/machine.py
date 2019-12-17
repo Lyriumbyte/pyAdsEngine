@@ -21,8 +21,9 @@ def declareVars():
     engine.addVariables(device1.var2)
     engine.addVariables(device2.var1)
     engine.addVariables(device2.var2)
+    engine.addVariables(device2.var3)
 
 
 #runs Program
 declareVars()
-engine.run(do,0.3,engine.valueDict)
+engine.run(do,1,engine.valueDict)

@@ -1,10 +1,11 @@
 #todo
 from TcAds.Variable import Variable as Variable
+import pyads
 
 
 class Device1:
-    var1 = Variable('MAIN.intWert000')
-    var2 = Variable('MAIN.intWert001')
+    var1 = Variable('MAIN.intWert000',pyads.PLCTYPE_INT)
+    var2 = Variable('MAIN.intWert001',pyads.PLCTYPE_INT)
 
     def __init__(self):
         pass

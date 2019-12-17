@@ -18,39 +18,19 @@ class Plc():
     def __writeValue(self,variable):
 
         if self.__plc.is_open:
-            #Writes Bool
-            if isinstance(variable.Value,bool):
-                self.__plc.write_by_name(variable.name,variable.writeValue, pyads.PLCTYPE_BOOL)
-                variable.isDirty = False
-
-            #Writes String
-            elif isinstance(variable.Value,str):
-                self.__plc.write_by_name(variable.name,variable.writeValue, pyads.PLCTYPE_STRING)
-                variable.isDirty = False
-
-            #Writes Integer
-            elif isinstance(variable.Value,int):
-                self.__plc.write_by_name(variable.name,variable.writeValue, pyads.PLCTYPE_INT)
-                variable.isDirty = False
+            #Writes
+            
+            self.__plc.write_by_name(variable.name,variable.writeValue, variable.datatype)
+            variable.isDirty = False
 
 
     def __readValue(self, variable):
         
         if self.__plc.is_open:
-
-            #returns Bool
-            if isinstance(variable.Value,bool):
-                return self.__plc.read_by_name(variable.name, pyads.PLCTYPE_BOOL)
             
-            #returns String
-            if isinstance(variable.Value,str):
-                return self.__plc.read_by_name(variable.name, pyads.PLCTYPE_STRING)
-            
-            #returns Integer
-            if isinstance(variable.Value,int):
-                return self.__plc.read_by_name(variable.name, pyads.PLCTYPE_INT)
-            
-
+            #reads
+             return self.__plc.read_by_name(variable.name, variable.datatype)
+ 
       
     def __updateValues(self, variable):
         
