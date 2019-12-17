@@ -1,7 +1,7 @@
 class Variable:
 
     # constructor
-    # hallo
+ 
     def __init__(self, name,datatype):
         '''pyads datatype i.e.:pyads.PLCTYPE_INT'''
         self.__name = name
